@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Report_Project.Models.MeetingSchedule>
+
+<h2>Scheduled Meetings</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Recurrence</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var meeting in Model)
+        {
+            <tr>
+                <td>@meeting.Title</td>
+                <td>@meeting.RecurrenceType</td>
+                <td>@meeting.StartDate.ToShortDateString()</td>
+                <td>@meeting.EndDate?.ToShortDateString()</td>
+                <td>@meeting.Time</td>
+            </tr>
+        }
+    </tbody>
+</table>

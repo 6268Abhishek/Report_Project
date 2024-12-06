@@ -1,0 +1,13 @@
+﻿@model Report
+
+<h2>Report Details</h2>
+
+<div>
+    <h3>@Model.Report_id</h3>
+    <p><strong>Report_Name:</strong> @Model.Report_Name</p>
+    <p><strong>Receiver_Email:</strong> @Model.Receiver_Email</p>
+    <p><strong>Receiver_Name:</strong> @Model.Receiver_Name</p>
+    <p><strong>Receiver_active_Inactive:</strong> @Model.Receiver_active_Inactive</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

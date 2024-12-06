@@ -1,0 +1,46 @@
+﻿@* @model IEnumerable<Report> *@
+
+<h2>Reports</h2>
+
+
+<a asp-action="Create" class="btn btn-primary">Create</a>
+<table class="table table-bordered">
+    <thead>
+    
+        <tr>
+            <th>Report ID</th>
+            <th>ReportName</th>
+            <th>ReceiverEmail</th>
+            <th>ReciverName</th>
+            <th>Receiver_active_Inactive</th>
+            <th>Edit report</th>
+            <th>Details report</th>
+            <th>Delete report</th>
+            <th>Schedule report</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.Report_id</td>    
+                <td>@report.Report_Name</td>         
+                <td>@report.Receiver_Email </td>   
+                <td>@report.Receiver_Name</td>       
+                <td>@report.Receiver_active_Inactive</td>
+               <td>
+                    <a asp-action="Edit"  class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@report.Report_id" class="btn btn-primary">Details</a>
+                </td> 
+                <td>
+                    <a asp-action="Delete"  class="btn btn-danger">Delete</a>
+                </td><td>
+                    <a asp-controller="MeetingSchedule" asp-action="Create" class="btn btn-success">Schedule</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
